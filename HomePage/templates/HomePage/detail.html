@@ -1,0 +1,49 @@
+{% extends 'HomePage/base.html' %}
+
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">{{ product.name }}</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Category 1</a>
+                    <a href="#" class="list-group-item">Category 2</a>
+                    <a href="#" class="list-group-item">Category 3</a>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="card mt-3 mr-0">
+                    <img src="{{ product.image.url }}">
+                    <div class="container card-body">
+                        <div class="row">
+                            <h3 class="col-6 card-title">{{ product.name }}</h3>
+                            <button type="button" class="col btn btn-outline-danger">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <p class="col mt-3 pl-5 pr-0 ml-4">{{ product.quantity }}</p>
+                            <button type="button" class="col btn btn-outline-success">
+                                <i class="fa fa-plus"></i>
+                            </button>
+
+                        </div>
+                        <h4>{{ product.price }} SR</h4>
+                        <p class="card-text">{{ product.description }}</p>
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                        4.0 stars
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+
+    </div>
+{% endblock %}

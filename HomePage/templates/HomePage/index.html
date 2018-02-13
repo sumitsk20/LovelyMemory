@@ -1,0 +1,26 @@
+{% extends 'HomePage/base.html' %}
+{% block body %}
+
+    <div id="containerImage" class="container">
+        <div class="row text-center">
+            {% for product in object_list %}
+                <div class="col-lg-3">
+                    <a href="{% url 'detail' product.id %}">
+                        <img id="ProductImage" class="img-thumbnail h-75 w-100" src="{{ product.image.url }}" alt="">
+                    </a>
+                    <div class="img__description_layer">
+                        <p class="img__description">{{ product.name }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
