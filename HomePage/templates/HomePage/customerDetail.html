@@ -1,0 +1,16 @@
+{% extends 'HomePage/base.html' %}
+
+
+{% block body %}
+    <div class="container center_div" align="center">
+        <h1>Customer Detail</h1>
+        <div class="row center_div" align="center">
+            <form method="POST" >
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

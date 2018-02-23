@@ -1,0 +1,30 @@
+{% extends 'HomePage/base.html' %}
+
+{% block body %}
+
+    <div id="containerImage" class="container">
+        <div class="carousel-item">
+
+            <img src="" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ object_list.name }}</h5>
+                <p>{{ object_list.description }}</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            {% for product in object_list %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="{% url 'detail' product.id %}">
+                        <div id="card" class="card">
+                            <img id="ProductImage" class="card-img-top" height="70%" width="70%"
+                                 src="{{ product.image.url }}">
+                            <div>
+                                <h6>{{ product.name }}</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
