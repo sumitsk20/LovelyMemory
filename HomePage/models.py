@@ -27,6 +27,8 @@ class Product(models.Model):
 class CustomerOrder(models.Model):
     customer_name = models.CharField(max_length=100, blank=False, default='')
     customer_location = models.CharField(max_length=500, blank=False, default='')
+    customer_request = models.TextField(max_length=1500)
+    customer_deliver = models.DateField()
 
     def __str__(self):
         return self.customer_name
