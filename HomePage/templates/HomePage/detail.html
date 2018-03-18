@@ -35,7 +35,7 @@
                         <h4>{{ product.price }} SR</h4>
                         <div class="row">
                             <p class="col-10 card-text">{{ product.description }}</p>
-                            <a href="{% url 'customerOrder' product.id %}">
+                            <a href="{% url 'product' product.id %}">
                                 <button type="button" class="col btn btn-outline-success">
                                     <i>Submit</i>
                                 </button>

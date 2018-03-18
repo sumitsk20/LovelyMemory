@@ -12,6 +12,13 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../static/css/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script>
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD' //This is the default date format Django will accept, it also disables the time in the datepicker.
+            })
+        });
+    </script>
 
 
 </head>
@@ -50,6 +57,8 @@
 
     <!-- Body -->
     {% block body %}
+
+
     {% endblock %}
 
     <!-- Footer -->
