@@ -1,12 +1,5 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.views import generic
-from django.template import Context
-from django.template import RequestContext
-from .models import Product, CustomerOrderModel
-from django.views import View
-from django.views.generic import TemplateView
-from django.views.generic.edit import CreateView
 from .models import Product
 from .forms import Customer
 
@@ -49,6 +42,11 @@ class DetailView(generic.DetailView):
     model = Product
     template_name = 'HomePage/detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        # context['pk'] = self.kwargs['name']
+        return context
+
 
 class CustomerOrderView(generic.FormView):
     model = Product
@@ -56,7 +54,10 @@ class CustomerOrderView(generic.FormView):
 
     def get(self, request, **kwargs):
         form = Customer()
-        return render(request, 'HomePage/customerDetail.html', {'form': form})
+        id = self.kwargs.get(id)
+        product = Product
+        context = {'form': form, 'id': id, 'product': product}
+        return render(request, 'HomePage/customerDetail.html', context)
 
     def post(self, request, **kwargs):
         form = Customer(request.POST or None)
