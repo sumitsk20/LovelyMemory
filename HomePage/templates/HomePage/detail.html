@@ -1,0 +1,60 @@
+{% extends 'HomePage/base.html' %}
+
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">{{ instance.name }}</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Large</a>
+                    <a href="#" class="list-group-item">Medium</a>
+                    <a href="#" class="list-group-item">Small</a>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="card mt-3 mr-0">
+                    <img src="{{ instance.image.url }}">
+                    <div class="container card-body">
+                        <div class="row">
+                            <h3 class="col-6 card-title">{{ instance.name }}</h3>
+                            <button type="button" class="col btn btn-outline-danger">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <p class="col mt-3 pl-5 pr-0 ml-4">{{ instance.quantity }}</p>
+                            <button type="button" class="col btn btn-outline-success">
+                                <i class="fa fa-plus"></i>
+                            </button>
+
+                        </div>
+                        <h4>{{ instance.price }} SR</h4>
+                        <div class="row">
+                            <p class="col-10 card-text">{{ instance.description }}</p>
+                            <a href="{% url 'product_form' instance.id %}">
+                                <button type="button" class="col btn btn-outline-success">
+                                    <i>Submit</i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+        <div class="row">
+            <p></p>
+            <p></p>
+            <p></p>
+
+        </div>
+
+    </div>
+{% endblock %}
