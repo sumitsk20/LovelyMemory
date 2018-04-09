@@ -15,7 +15,7 @@ db.sqlite3
 *.pot
 *.py[co]
 .tox/
-.idea/workspace.xml
+.idea/*
 MANIFEST
 dist/
 docs/_build/
