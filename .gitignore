@@ -13,7 +13,8 @@
 local_settings.py
 db.sqlite3
 */media/*
-*/LovelyMemory/*
+*/__init__.py
+*/wsgi.py
 *.egg-info
 *.pot
 *.py[co]
