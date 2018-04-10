@@ -3,6 +3,8 @@
 
 ### Django ###
 
+*/python
+*/manage.py
 *.log
 *.pot
 *.pyc
@@ -11,6 +13,7 @@
 local_settings.py
 db.sqlite3
 */media/*
+*/LovelyMemory/LovelyMemory/*
 *.egg-info
 *.pot
 *.py[co]
