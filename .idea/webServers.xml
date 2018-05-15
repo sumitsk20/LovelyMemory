@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cd30746a-26ab-4c59-8d95-4403bcbd7c35" name="Lovely Memory" url="http://207.154.252.214">
+        <fileTransfer host="207.154.252.214" port="22" rootFolder="/home/django" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
