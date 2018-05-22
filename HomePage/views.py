@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Product
-from .forms import Customer
+from HomePage.models import Product
+from HomePage.forms import Customer
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -41,7 +41,8 @@ def index_view(request):
 
 def detail_view(request, pk):
     instance = get_object_or_404(Product, id=pk)
-
+    session_value = request.session['product'] = instance.id
+    print(session_value)
     context = {'instance': instance}
     return render(request, 'HomePage/detail.html', context)
 
