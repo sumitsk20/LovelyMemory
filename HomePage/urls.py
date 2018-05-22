@@ -1,9 +1,8 @@
-from django.conf.urls import url
-from django.conf import settings
-from django.conf.urls.static import static
-from HomePage.views import index_view, GiftView, FlowerView, BalloonView, detail_view, customer_order_view
+from __future__ import absolute_import
 
-app__name = 'HomePage'
+from django.conf.urls import url
+
+from .views import index_view, GiftView, FlowerView, BalloonView, detail_view, customer_order_view
 
 urlpatterns = [
                   url(r'^$', index_view, name='index'),
@@ -12,4 +11,4 @@ urlpatterns = [
                   url(r'^balloon/$', BalloonView.as_view(), name='balloon'),
                   url(r'^(?P<pk>[0-9]+)/$', detail_view, name='detail'),
                   url(r'^(?P<pk>[0-9]+)/order/$', customer_order_view, name='product_form'),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]

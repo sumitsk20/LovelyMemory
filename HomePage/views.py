@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import generic
-from HomePage.models import Product
-from HomePage.forms import Customer
+from __future__ import absolute_import
+
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views import generic
+from django.shortcuts import render, get_object_or_404
+
+from .models import Product
+from .forms import Customer
 
 
 class BalloonView(generic.ListView):

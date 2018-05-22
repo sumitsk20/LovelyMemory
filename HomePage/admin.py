@@ -1,5 +1,8 @@
+from __future__ import absolute_import
+
+
 from django.contrib import admin
-from HomePage.models import Product, CustomerOrderModel
+from .models import Product, CustomerOrderModel
 
 # Register your models here.
 admin.site.register(Product)
